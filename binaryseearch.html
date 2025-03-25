@@ -1,0 +1,114 @@
+<html>
+<head>
+<style>
+html{
+	user-select:none;
+	}
+@media print{
+	html,
+	body{
+	display:none;
+	}
+	
+}
+</style>
+</head>
+<body>
+<div>
+<h1 style="color:red;">written by Amea</h1>
+<h1 style="color:blue;">Binary Search Tree</h1>
+	<pre>
+	#include<iostream>
+using namespace std;
+struct node{
+    int data;
+    node* r;
+    node* l;
+};
+node* root=NULL;
+void preorder(node*);
+void inorder(node* );
+void insertbst();
+int main(){
+int flag=1;
+while(flag){
+        int ch;
+    cout<<"1. insert\n";
+    cout<<"2. inorder \n";
+    cout<<"3. preorder \n";
+    cout<<"4. exit \n";
+    cout<<"select operation\n";
+    cin>>ch;
+switch(ch){
+case 1:
+    insertbst();
+    break;
+case 2:
+    cout<<"inorder display"<<endl;
+    inorder(root);
+	cout<<endl;
+    break;
+case 3:
+    cout<<"preorder display"<<endl;
+    preorder(root);
+	cout<<endl;
+    break;
+case 4:
+    flag=0;
+    break;
+default:
+    cout<<"invalid choice \n";
+}
+}
+return 0;
+}
+void insertbst(){
+    node* temp;
+    temp=new node();
+    cout<<"enter your age\n";
+    cin>>temp->data;
+    temp->r=NULL;
+    temp->l=NULL;
+    if(root==NULL){
+        root=temp;
+    }
+    else{
+        node* p=0;
+        node* current=new node();
+        current=root;
+        //searching the correct position
+        while(current){
+                p=current;
+            if(temp->data <= current->data){
+                current=current->l;
+            }
+            else{
+                current=current->r;
+            }
+        }// end of while
+        if(temp->data <= p->data)
+            p->l=temp;
+        else
+            p->r=temp;
+    }
+}
+void inorder(node* root){
+    if (root==NULL)
+        return;
+    inorder(root->l);
+    cout << root->data<<", ";
+    inorder(root->r);
+}
+void preorder(node* root){
+    if (root==NULL)
+        return;
+    cout << root->data<<", ";
+    inorder(root->l);
+    inorder(root->r);
+}
+
+
+	</pre>
+</div>
+</body>
+</html>
