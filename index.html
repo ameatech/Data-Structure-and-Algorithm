@@ -53,20 +53,22 @@ case 1:
     insertbst();
     break;
 case 2:
-    cout<<"inorder display"<<endl;
+	    
+    cout<<"inorder display"<< <pre>endl</pre>;
     inorder(root);
-	cout<<endl;
+	cout<< <pre>endl</pre>;
     break;
 case 3:
-    cout<<"preorder display"<<endl;
+    cout<<"preorder display"<< <pre>endl</pre>;
     preorder(root);
-	cout<<endl;
+	cout<< <pre>endl</pre>;
     break;
 case 4:
     flag=0;
     break;
 default:
     cout<<"invalid choice \n";
+	    
 }
 }
 return 0;
@@ -105,13 +107,13 @@ void inorder(node* root){
     if (root==NULL)
         return;
     inorder(root->l);
-    cout << root->data<<", ";
+    cout << <pre>root-</pre>>data<<", ";
     inorder(root->r);
 }
 void preorder(node* root){
     if (root==NULL)
         return;
-    cout << root->data<<", ";
+    cout << <pre>root-</pre>>data<<", ";
     inorder(root->l);
     inorder(root->r);
 }
